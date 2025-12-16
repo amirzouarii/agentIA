@@ -1,6 +1,7 @@
 package com.example.mcp.tools;
 
 import org.springaicommunity.mcp.annotation.McpTool;
+import org.springaicommunity.mcp.annotation.McpToolParam;
 import org.springframework.ai.tool.annotation.Tool;
 import org.springframework.stereotype.Component;
 
@@ -11,7 +12,7 @@ public class ProductTools {
 
 
     @McpTool(description = "recupere un produit à partir de son id")
-    public Produit getProduct(int id){
+    public Produit getProduct(@McpToolParam(description = "id du produit") int id){
         return new Produit(id, "pc portable", 5000);
     }
 
